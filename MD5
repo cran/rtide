@@ -1,13 +1,13 @@
-d3c2bef3557ea25aaef6dd528584d6f0 *DESCRIPTION
+9c603d26b9876339a2c4d1a3281ece17 *DESCRIPTION
 5fc9dff49d44d9e3015224304788d9e0 *LICENSE
 54ffc91a2b333b27ba546aa6d5a8190e *NAMESPACE
-99c4305e1df52268e5b3a27e03952dd4 *NEWS.md
+0820fda84d3715f90db31ced798e2b8e *NEWS.md
 45dd175c4fb306555ba7ce12de49ba9c *R/data.R
 f6e0e0c4e78c77146d8aaf23d2349940 *R/package.R
 17023e23866ac4b2c38f0d92a3e17010 *R/tide-harmonics.R
-63ff9fb18c8a0993adad28fedb500e87 *R/tide-height.R
+80f30f0ca79b01fa9bc90fe8b51b225a *R/tide-height.R
 588808a1264ea688a4f7460414a2aedd *R/zzz.R
-02a3fee52412b8679be33d5ae8a9f357 *README.md
+6da67b83f8d141fb9c69bb7aa820b380 *README.md
 6fd7164c629557127a72d65cde573852 *data/brandywine.rda
 d49d4625533557376c2ce714c95cee2c *data/harmonics.rda
 1d3a457c58b0e7d8bbbb3d46ee56293e *data/monterey.rda
@@ -26,6 +26,6 @@ eab7dc279f7dc7ebe8b219f58c181099 *tests/testthat/test-harmonics.R
 3ca5bce9fb1fdd99fb298fc62e664eb2 *tests/testthat/test-subset.R
 f7c89df389ffe366dadd3bf6b2cafffb *tests/testthat/test-tide-datetimes.R
 e6ce17b7438f65db814a444fbb49fad7 *tests/testthat/test-tide-height-data.R
-eddfabe81a9358c2c1e0b6fffbeae35c *tests/testthat/test-tide-height.R
-6548fa72d00d64fccbddbe4e54cee53e *tests/testthat/test-tide-stations.R
+46c91d25e7f2414c2fd7e1d941965b35 *tests/testthat/test-tide-height.R
+e9d8fb0aa5a396a0ee6b347d6353d48d *tests/testthat/test-tide-stations.R
 f01ee4ac5c966d6acedbe4f99c2de756 *tests/testthat/test-years-tide-harmonics.R

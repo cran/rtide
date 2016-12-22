@@ -16,6 +16,7 @@ tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
   if (!is.tide_harmonics(harmonics))
     stop("harmonics must be an object of class 'tide_harmonics'", call. = FALSE)
 
+  stations %<>% stringr::str_replace_all("[(]", "[(]") %>% stringr::str_replace_all("[)]", "[)]")
   stations <- paste0("(", paste(stations, collapse = ")|("), ")")
   match <- stringr::str_detect(harmonics$Station$Station, stations)
   match %<>% which()
@@ -84,7 +85,7 @@ tide_height_data_datetime <- function(d, h) {
 }
 
 tide_height_data_station <- function(data, harmonics) {
-  harmonics %<>% subset(data$Station[1])
+  harmonics %<>% subset(stringr::str_c("^", data$Station[1], "$"))
   data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
                       h = harmonics)
   if (harmonics$Station$Units %in% c("feet", "ft"))
