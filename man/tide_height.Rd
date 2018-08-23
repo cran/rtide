@@ -5,8 +5,8 @@
 \title{Tide Height}
 \usage{
 tide_height(stations = "Monterey Harbor", minutes = 60L,
-  from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), tz = "UTC",
-  harmonics = rtide::harmonics)
+  from = as.Date("2015-01-01"), to = as.Date("2015-01-01"),
+  tz = "UTC", harmonics = rtide::harmonics)
 }
 \arguments{
 \item{stations}{A character vector of stations to match - treated as regular expressions.}
@@ -22,7 +22,7 @@ tide_height(stations = "Monterey Harbor", minutes = 60L,
 \item{harmonics}{The harmonics object.}
 }
 \value{
-A tibble of the tide heights in m by the number of minutes for each station from from to to.
+A data frame of the tide heights in m by the number of minutes for each station from from to to.
 }
 \description{
 Calculates tide height at specified stations based on the supplied harmonics object.

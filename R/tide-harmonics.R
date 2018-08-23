@@ -14,7 +14,7 @@ check_tide_harmonics <- function(x) {
   if (!all(c("Station", "Node", "StationNode", "NodeYear") %in% names(x)))
     stop("x is missing components", call. = FALSE)
 
-  check_data2(x$Station, values = list(
+  check_data(x$Station, values = list(
     Station = "",
     Units = c("feet", "ft", "m", "metre"),
     Longitude = 1,
@@ -22,11 +22,13 @@ check_tide_harmonics <- function(x) {
     Hours = c(-12,12),
     TZ = "",
     Datum = 1),
+    nrow = c(1L, .Machine$integer.max),
     key = "Station")
 
-  check_data2(x$Node, values = list(
+  check_data(x$Node, values = list(
     Node = "",
     Speed = 1),
+    nrow = c(1L, .Machine$integer.max),
     key = "Node")
 
   if (!is.array(x$StationNode)) stop("StationNode must be an array", call. = FALSE)
@@ -56,14 +58,13 @@ tide_harmonics <- function (x) {
              "units", "longitude", "latitude", "timezone", "tzfile", "datum",
              "A", "kappa") %in% names(x))) stop("x missing components", call. = FALSE)
 
-
   x$Station <- data.frame(
     Station = x$station, Units = x$unit, Longitude = x$longitude, Latitude = x$latitude,
-    Hours = x$timezone, TZ = x$tzfile, Datum = x$datum, stringsAsFactors = TRUE)
+    Hours = x$timezone, TZ = x$tzfile, Datum = x$datum, stringsAsFactors = FALSE)
 
-  x$Station$Station %<>% enc2utf8()
+  x$Station$Station <- enc2utf8(x$Station$Station)
 
-  x$Node <- data.frame(Node = x$name, Speed = x$speed, stringsAsFactors = TRUE)
+  x$Node <- data.frame(Node = x$name, Speed = x$speed, stringsAsFactors = FALSE)
   x$StationNode <- abind::abind(A = x$A, Kappa = x$kappa, along = 3)
   dimnames(x$StationNode) <- list(x$Station$Station, x$Node$Node, c("A", "Kappa"))
 
@@ -82,6 +83,9 @@ tide_harmonics <- function (x) {
   x$StationNode <- x$StationNode[,node,,drop = FALSE]
   x$NodeYear <- x$NodeYear[node,,,drop = FALSE]
 
+  x$Node <- as_conditional_tibble(x$Node)
+  x$Station <- as_conditional_tibble(x$Station)
+
   class(x) <- c("tide_harmonics")
   check_tide_harmonics(x)
   x
@@ -89,9 +93,9 @@ tide_harmonics <- function (x) {
 
 #' @export
 subset.tide_harmonics <- function(x, stations, ...) {
-  stations %<>% tide_stations(x)
-  stations <- x$Station$Station %in% stations %>% which()
-  x$Station <- x$Station[stations,]
+  stations <- tide_stations(stations, x)
+  stations <- which(x$Station$Station %in% stations)
+  x$Station <- x$Station[stations,,drop = FALSE]
   x$StationNode <- x$StationNode[stations,,,drop = FALSE]
   x
 }
@@ -108,6 +112,6 @@ print.tide_harmonics <- function(x, ...) {
 
 years_tide_harmonics <- function(x) {
   x <- dimnames(x$NodeYear)[[2]]
-  x %<>% as.character() %>% as.integer()
+  x <- as.integer(as.character(x))
   x
 }

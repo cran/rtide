@@ -7,9 +7,9 @@ test_that("tide_height_data works", {
                      DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
                      stringsAsFactors = FALSE)
 
-  expect_df(datacheckr::check_data3(tide_height_data(data), values = list(
+  expect_df(checkr::check_data(tide_height_data(data), values = list(
     Station = "", DateTime = Sys.time(), TideHeight = 1),
-    min_row = 1, max_row = 1))
+    nrow = 1, exclusive = TRUE, order = TRUE))
   expect_identical(lubridate::tz(data$DateTime), "PST8PDT")
 })
 
@@ -21,6 +21,8 @@ test_that("tide_height_data predictions", {
 })
 
 test_that("tide_height_data checks", {
+  library(lubridate)
+
   data <- data.frame(Station = "Monterey, Monterey Harbor, California",
                      DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
                      stringsAsFactors = FALSE)
@@ -30,11 +32,13 @@ test_that("tide_height_data checks", {
   expect_error(tide_height_data(data), "data already has 'TideHeight' column")
 
   data$TideHeight <- NULL
-  lubridate::year(data$DateTime) <- 1699
+  year(data$DateTime) <- 1699
   expect_error(tide_height_data(data), "years are outside harmonics range")
 })
 
 test_that("tide_height_data tz", {
+  library(lubridate)
+
   data <- data.frame(Station = "Monterey, Monterey Harbor, California",
                      DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
                      stringsAsFactors = FALSE)
@@ -42,6 +46,6 @@ test_that("tide_height_data tz", {
   data2 <- data
   data2$DateTime <- lubridate::with_tz(data2$DateTime, tz = "EST")
 
-  expect_identical(tide_height_data(data)$TideHeight, tide_height_data(data2)$TideHeight)
+  expect_equal(tide_height_data(data), tide_height_data(data2))
 })
 
