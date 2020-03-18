@@ -1,15 +1,25 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Travis-CI Build
-Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.org/poissonconsulting/rtide)
-[![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
-[![CRAN
-Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rtide)](https://cran.r-project.org/package=rtide)
-
 # rtide
+
+<!-- badges: start -->
+
+[![lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![Travis-CI Build
+Status](https://travis-ci.com/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.com/poissonconsulting/rtide)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/rtide?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/rtide)
+[![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
+[![License:
+GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![Tinyverse
+status](https://tinyverse.netlify.com/badge/rtide)](https://CRAN.R-project.org/package=rtide)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide)
+<!-- badges: end -->
 
 ## Introduction
 
@@ -21,23 +31,31 @@ It includes the harmonics data for 637 US stations.
 ## Utilisation
 
 ``` r
+library(tibble)
 library(rtide)
 #> rtide is not suitable for navigation
 
 data <- rtide::tide_height(
-  "Monterey Harbor", from = as.Date("2016-07-13"), to = as.Date("2016-07-15"), 
-  minutes = 10L, tz = "PST8PDT")
+  "Monterey Harbor",
+  from = as.Date("2016-07-13"), to = as.Date("2016-07-15"),
+  minutes = 10L, tz = "PST8PDT"
+)
 
-print(head(data))
-#> # A tibble: 6 x 3
-#>   Station                               DateTime            TideHeight
-#>   <chr>                                 <dttm>                   <dbl>
-#> 1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514
-#> 2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.496
-#> 3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.481
-#> 4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.468
-#> 5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.457
-#> 6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.449
+print(data)
+#> # A tibble: 432 x 3
+#>    Station                               DateTime            TideHeight
+#>    <chr>                                 <dttm>                   <dbl>
+#>  1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514
+#>  2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.496
+#>  3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.481
+#>  4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.468
+#>  5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.457
+#>  6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.449
+#>  7 Monterey, Monterey Harbor, California 2016-07-13 01:00:00      0.443
+#>  8 Monterey, Monterey Harbor, California 2016-07-13 01:10:00      0.440
+#>  9 Monterey, Monterey Harbor, California 2016-07-13 01:20:00      0.439
+#> 10 Monterey, Monterey Harbor, California 2016-07-13 01:30:00      0.441
+#> # … with 422 more rows
 ```
 
 ``` r
@@ -46,10 +64,12 @@ library(scales)
 ```
 
 ``` r
-ggplot(data = data, aes(x = DateTime, y = TideHeight)) + 
-  geom_line() + 
-  scale_x_datetime(name = "Date", 
-                   labels = date_format("%d %b %Y", tz="PST8PDT")) +
+ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
+  geom_line() +
+  scale_x_datetime(
+    name = "Date",
+    labels = date_format("%d %b %Y", tz = "PST8PDT")
+  ) +
   scale_y_continuous(name = "Tide Height (m)") +
   ggtitle("Monterey Harbour")
 ```
@@ -58,50 +78,34 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
 
 ## Installation
 
-To install the latest official release from
-[CRAN](https://CRAN.R-project.org/package=rtide)
+To install the latest release from [CRAN](https://cran.r-project.org)
 
-    install.packages("rtide")
+``` r
+install.packages("rtide")
+```
 
-To install the latest development version from
+To install the developmental version from
 [GitHub](https://github.com/poissonconsulting/rtide)
 
-    # install.packages("devtools")
-    devtools::install_github("poissonconsulting/rtide")
+``` r
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/rtide")
+```
 
-To install the latest development version from the Poisson drat
+To install the latest developmental release from the Poisson drat
 [repository](https://github.com/poissonconsulting/drat)
 
-    # install.packages("drat")
-    drat::addRepo("poissonconsulting")
-    install.packages("rtide")
+``` r
+# install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("rtide")
+```
 
-## Interaction
+## Shiny
 
 Tide heights can be also obtained using rtide through a [shiny
 interface](https://poissonconsulting.shinyapps.io/rtide/) developed by
 Seb Dalgarno.
-
-## Citation
-
-``` 
-
-To cite package 'rtide' in publications use:
-
-  Joe Thorley, Luke Miller and Abram Fleishman (2018). rtide: Tide
-  Heights. R package version 0.0.5.
-  https://github.com/poissonconsulting/rtide
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {rtide: Tide Heights},
-    author = {Joe Thorley and Luke Miller and Abram Fleishman},
-    year = {2018},
-    note = {R package version 0.0.5},
-    url = {https://github.com/poissonconsulting/rtide},
-  }
-```
 
 ## Contribution
 
@@ -111,13 +115,17 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/rtide/pulls) are
 always welcome.
 
-Please note that this project is released with a [Contributor Code of
-Conduct](CONDUCT.md). By participating in this project you agree to
-abide by its terms.
+### Code of Conduct
+
+Please note that the rtide project is released with a [Contributor Code
+of
+Conduct](https://www.contributor-covenant.org/version/1/0/0/code-of-conduct/).
+By contributing to this project, you agree to abide by its terms.
 
 ## Inspiration
 
-The harmonics data was converted from harmonics-dwf-20151227-free, NOAA
-web site data processed by David Flater for
-[XTide](http://www.flaterco.com/xtide/). The code to calculate tide
-heights from the harmonics is based on XTide.
+The harmonics data was converted from
+<https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
+NOAA web site data processed by David Flater for
+[`XTide`](http://www.flaterco.com/xtide/). The code to calculate tide
+heights from the harmonics is based on `XTide`.

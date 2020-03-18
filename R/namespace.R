@@ -1,2 +1,2 @@
-#' @import checkr
+#' @import chk dttr2
 NULL
