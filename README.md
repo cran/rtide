@@ -7,11 +7,10 @@
 
 [![lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Travis-CI Build
-Status](https://travis-ci.com/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.com/poissonconsulting/rtide)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/rtide?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/rtide)
-[![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
+[![R build
+status](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide?branch=master)
 [![License:
 GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![Tinyverse
@@ -92,15 +91,6 @@ To install the developmental version from
 remotes::install_github("poissonconsulting/rtide")
 ```
 
-To install the latest developmental release from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-``` r
-# install.packages("drat")
-drat::addRepo("poissonconsulting")
-install.packages("rtide")
-```
-
 ## Shiny
 
 Tide heights can be also obtained using rtide through a [shiny
@@ -115,11 +105,11 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/rtide/pulls) are
 always welcome.
 
-### Code of Conduct
+## Code of Conduct
 
 Please note that the rtide project is released with a [Contributor Code
 of
-Conduct](https://www.contributor-covenant.org/version/1/0/0/code-of-conduct/).
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
 
 ## Inspiration
