@@ -5,16 +5,13 @@
 
 <!-- badges: start -->
 
-[![lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![R build
-status](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R-CMD-check](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide?branch=master)
 [![License:
 GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Tinyverse
-status](https://tinyverse.netlify.com/badge/rtide)](https://CRAN.R-project.org/package=rtide)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide)
@@ -117,5 +114,5 @@ By contributing to this project, you agree to abide by its terms.
 The harmonics data was converted from
 <https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
 NOAA web site data processed by David Flater for
-[`XTide`](http://www.flaterco.com/xtide/). The code to calculate tide
+[`XTide`](https://flaterco.com/xtide/). The code to calculate tide
 heights from the harmonics is based on `XTide`.
