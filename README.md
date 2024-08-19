@@ -7,9 +7,9 @@
 
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/rtide/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/rtide/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide?branch=master)
+coverage](https://codecov.io/gh/poissonconsulting/rtide/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/rtide)
 [![License:
 GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![CRAN
@@ -23,6 +23,22 @@ status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/
 harmonics.
 
 It includes the harmonics data for 637 US stations.
+
+## Installation
+
+To install the latest release from [CRAN](https://cran.r-project.org)
+
+``` r
+install.packages("rtide")
+```
+
+To install the developmental version from
+[GitHub](https://github.com/poissonconsulting/rtide)
+
+``` r
+# install.packages("pak")
+pak::pak("poissonconsulting/rtide")
+```
 
 ## Utilisation
 
@@ -38,7 +54,7 @@ data <- rtide::tide_height(
 )
 
 print(data)
-#> # A tibble: 432 x 3
+#> # A tibble: 432 × 3
 #>    Station                               DateTime            TideHeight
 #>    <chr>                                 <dttm>                   <dbl>
 #>  1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514
@@ -51,7 +67,7 @@ print(data)
 #>  8 Monterey, Monterey Harbor, California 2016-07-13 01:10:00      0.440
 #>  9 Monterey, Monterey Harbor, California 2016-07-13 01:20:00      0.439
 #> 10 Monterey, Monterey Harbor, California 2016-07-13 01:30:00      0.441
-#> # … with 422 more rows
+#> # ℹ 422 more rows
 ```
 
 ``` r
@@ -70,23 +86,7 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   ggtitle("Monterey Harbour")
 ```
 
-![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
-
-## Installation
-
-To install the latest release from [CRAN](https://cran.r-project.org)
-
-``` r
-install.packages("rtide")
-```
-
-To install the developmental version from
-[GitHub](https://github.com/poissonconsulting/rtide)
-
-``` r
-# install.packages("remotes")
-remotes::install_github("poissonconsulting/rtide")
-```
+![](man/figures/README-unnamed-chunk-6-1.png)<!-- -->
 
 ## Shiny
 
@@ -106,13 +106,13 @@ always welcome.
 
 Please note that the rtide project is released with a [Contributor Code
 of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+Conduct](https://poissonconsulting.github.io/rtide/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
 
 ## Inspiration
 
 The harmonics data was converted from
-<https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
+<https://github.com/poissonconsulting/rtide/blob/main/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
 NOAA web site data processed by David Flater for
 [`XTide`](https://flaterco.com/xtide/). The code to calculate tide
 heights from the harmonics is based on `XTide`.

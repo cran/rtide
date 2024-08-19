@@ -6,27 +6,23 @@
 \alias{rtide-package}
 \title{rtide: Tide Heights}
 \description{
-Calculates tide heights based on tide station harmonics.  It
-    includes the harmonics data for 637 US stations.  The harmonics data
-    was converted from
-    <https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
-    NOAA web site data processed by David Flater for 'XTide'.  The code to
-    calculate tide heights from the harmonics is based on 'XTide'.
+Calculates tide heights based on tide station harmonics. It includes the harmonics data for 637 US stations. The harmonics data was converted from \url{https://github.com/poissonconsulting/rtide/blob/main/data-raw/harmonics-dwf-20151227-free.tar.bz2}, NOAA web site data processed by David Flater for 'XTide'. The code to calculate tide heights from the harmonics is based on 'XTide'.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/poissonconsulting/rtide}
+  \item \url{https://poissonconsulting.github.io/rtide/}
   \item Report bugs at \url{https://github.com/poissonconsulting/rtide/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID})
+\strong{Maintainer}: Luke Miller \email{contact@lukemiller.org}
 
 Authors:
 \itemize{
-  \item Luke Miller \email{contact@lukemiller.org}
+  \item Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID})
   \item Abram Fleishman
 }
 
