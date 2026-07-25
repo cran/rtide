@@ -1,6 +1,6 @@
-83b8f061f36c34142db017a0cdf82656 *DESCRIPTION
+ae808b7cc97ebddf754db4f7cedc0bad *DESCRIPTION
 77016fdad949b36185006a1161c62696 *NAMESPACE
-49babdb4ec026395b57e74a0ff04792c *NEWS.md
+b49b53eb6aa9ed7ac4e0408743e16214 *NEWS.md
 5f8a8f826e8e6434174dbd3aba5dc297 *R/data.R
 dda805c654b45d37a0afc1df47a9fecf *R/rtide-package.R
 40e47eaa6596bcdfb17808f2e53f7dad *R/tide-harmonics.R
@@ -8,14 +8,14 @@ ed7988fd02307fdc7c4074c4131f526c *R/tide-height.R
 ebc6ec5c5dfd0a343cdf3b0f1ddb9e66 *R/tide-slack.R
 ff6e9fc2ae750f4d0ead2fdb37c5f9f0 *R/utils.R
 588808a1264ea688a4f7460414a2aedd *R/zzz.R
-dc4969f8dd1e5d8e8856952adc81c976 *README.md
+ed560cb40ade4a83cbeff65e9b13f717 *README.md
 43c5af5938b75ef612b37af3406de8af *data/brandywine.rda
 d49d4625533557376c2ce714c95cee2c *data/harmonics.rda
 a61ebc0e03dcdb5fd1f75a0d7b8ae4cf *data/monterey.rda
 f7d83e3662865558aff8be32e4d65947 *inst/WORDLIST
 debccfd5dbd01536b44b09fa2be16775 *man/brandywine.Rd
 cba934c21c2fb4bc6dc65840725b0479 *man/figures/README-unnamed-chunk-4-1.png
-cba934c21c2fb4bc6dc65840725b0479 *man/figures/README-unnamed-chunk-6-1.png
+fb7c3a04f1739e82effdc3b30b9f96c0 *man/figures/README-unnamed-chunk-6-1.png
 cba934c21c2fb4bc6dc65840725b0479 *man/figures/README-unnamed-chunk-7-1.png
 391f696f961e28914508628a7af31b74 *man/figures/lifecycle-deprecated.svg
 691b1eb2aec9e1bec96b79d11ba5e631 *man/figures/lifecycle-experimental.svg
@@ -24,7 +24,7 @@ bf2f1ad432ecccee3400afe533404113 *man/figures/lifecycle-superseded.svg
 3800d36520270e047b50821615ba98f4 *man/harmonics.Rd
 c593eadd505ba72db88bbf7115415552 *man/is.tide_harmonics.Rd
 c185ac94a83e284767ae9da0d51d12bc *man/monterey.Rd
-140fd26e3ae5730eb559c942cd54559d *man/rtide-package.Rd
+24b7d94fbd3072a708d218be40aaae57 *man/rtide-package.Rd
 b65334cb3a07fec3c5d5ae850004ae10 *man/tide_datetimes.Rd
 ed02e947c1405046dd7879b319edb1c6 *man/tide_height.Rd
 df844e0e0f7965b30a87b15fb39f55b6 *man/tide_height_data.Rd
@@ -34,6 +34,6 @@ a4490358d4ed5a1d2163124f3a0f12d1 *man/tide_slack_data.Rd
 17df3c6cbb9052f463debf11a24631fa *tests/testthat.R
 8159786be68c499ff696f8b1897f11ff *tests/testthat/test-data.R
 54716c19dcfb905d9cbb68156ae70196 *tests/testthat/test-tide-harmonics.R
-9a22d16a49d6b4138f5ff5f250e34b60 *tests/testthat/test-tide-height.R
+ccdf290b150081203b1d6b4fae3816fd *tests/testthat/test-tide-height.R
 b033d9f2196de119a2cc2db473572780 *tests/testthat/test-tide-slack.R
 8b59820fc88d247752b5ef8f335e3796 *tests/testthat/test-utils.R
